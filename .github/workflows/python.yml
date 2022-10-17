@@ -40,7 +40,8 @@ jobs:
 #     - name: Test with pytest
 #       run: |
 #         pytest
-    - shell: bash
+    - name: Substitute secrets
+      shell: bash
       run: |
         while IFS= read -r line
         do
@@ -51,9 +52,11 @@ jobs:
         done <<< ${MONGO_SECRETS}
       env:
         MONGO_SECRETS: ${{ secrets.MONGO_SECRETS }}
-    - name: Upload db.ini
+    - name: Install dependencies
+      run: pip install "pymongo[srv]" --target .
+    - name: Upload artifact
       uses: actions/upload-artifact@v3
       with:
-        name: db.ini
-        path: lambda/db.ini
+        name: package
+        path: lambda/
         retention-days: 1
