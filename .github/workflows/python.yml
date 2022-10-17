@@ -55,5 +55,5 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: db.ini
-        path: db.ini
+        path: lambda/db.ini
         retention-days: 1
