@@ -7,17 +7,23 @@ config = configparser.ConfigParser()
 config.read("db.ini")
 
 CONNECTION_STRING = f"mongodb+srv://{config['mongo']['username']}:{config['mongo']['password']}@{config['mongo']['host']}/?retryWrites=true&w=majority"
+
+REQUEST_TYPE_COLLECTION = {
+    "PAGE_VISIT": "pages",
+    "EXTERNAL_SITE_VISIT": "externalUrls",
+}
+
 mongo_client = MongoClient(CONNECTION_STRING)
 
 def lambda_handler(event, context):
-    db = mongo_client.get_database(config['mongo']['database_name'])
-    collection = db.get_collection(config['mongo']['collection_name'])
+    req_body = json.loads(event["body"])
 
-    reqBody = json.loads(event["body"])
+    db = mongo_client.get_database(config['mongo']['database_name'])
+    collection = REQUEST_TYPE_COLLECTION[req_body["type"]]
 
     collection.insert_one({
         "datetime": datetime.utcnow(),
-        **reqBody
+        **req_body
     })
 
     return {
