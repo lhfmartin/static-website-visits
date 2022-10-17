@@ -21,6 +21,8 @@ def lambda_handler(event, context):
     db = mongo_client.get_database(config['mongo']['database_name'])
     collection = REQUEST_TYPE_COLLECTION[req_body["type"]]
 
+    del req_body["type"]
+    
     collection.insert_one({
         "datetime": datetime.utcnow(),
         **req_body
