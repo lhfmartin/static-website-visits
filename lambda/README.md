@@ -1,4 +1,4 @@
-# AWS Lambda for website-visits
+# AWS Lambda handler
 
 **(UNDER DEVELOPMENT)**
 
