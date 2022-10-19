@@ -60,7 +60,7 @@ function MyApp({ Component, pageProps }) {
 
 ## Using the js to record external url visits
 
-### Embedding the script in HTML files
+Replace the `{url}` with a valid URL
 ``` html
-<a href="url" onClick="recordExternalSiteVisit(event)"></a>
+<a href={url} onClick="recordExternalSiteVisit(event)"></a>
 ```
