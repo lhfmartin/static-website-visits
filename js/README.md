@@ -35,11 +35,27 @@ function App() {
   useEffect(() => {
     recordPageVisit();
   }, [location]);
+  
+  // ...
+```
 
-  return (
-    // ...
-  );
-}
+### Importing the script in Next.js
+
+``` js
+import { useEffect } from "react";
+import { useRouter } from "next/router";
+import { recordPageVisit } from "./record-visit";
+
+function MyApp({ Component, pageProps }) {
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!router.isReady) return;
+
+    recordPageVisit();
+  }, [router.isReady, router.pathname]);
+  
+  // ...
 ```
 
 ## Using the js to record external url visits
