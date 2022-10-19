@@ -1,6 +1,6 @@
-# website-visits
+# static-website-visits
 
-This repo contains the code that records visitors' visits to websites. It contains the Javascript code in [/js](/js) that is embedded in frontend pages, as well as the Python code in [/lambda](/lambda) which is deployed to AWS lambda. MongoDB is used to store the data for the visits.
+This repo contains the code that records visitors' visits to **static** websites. It contains the Javascript code in [/js](/js) that is embedded in frontend pages, as well as the Python code in [/lambda](/lambda) which is deployed to AWS lambda. MongoDB is used to store the data for the visits.
 
 It support two type of visit records currently:
 
