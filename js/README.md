@@ -50,6 +50,6 @@ function App() {
 ## Using the js to record external url visits
 
 ``` html
-<a href={href} onClick={(e) => onClickHandler(e, href)} onAuxClick={(e => onClickHandler(e, href)}>
+<a href={href} onClick={(e) => onClickHandler(e, href)} onAuxClick={(e) => onClickHandler(e, href)}>
 ```
 Make sure the `href` variable is defined and is a valid url
