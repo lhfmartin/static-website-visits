@@ -1,4 +1,5 @@
 const API_URL = ""; //TODO
+
 let deviceInfo = {};
 
 function parse_information(field, text) {
@@ -35,7 +36,7 @@ async function recordPageVisit() {
 
 async function recordExternalSiteVisit(event, url) {
   if (!url) {
-    url = event.target.getAttribute("href");
+    url = event.currentTarget.getAttribute("href");
   }
   await setDeviceInfoPromise;
   let record = {
@@ -57,4 +58,4 @@ if (typeof module == "undefined") {
 }
 
 // Comment the following line if this script is imported in HTML files
-export { recordPageVisit, recordExternalSiteVisit }
+export { recordPageVisit, recordExternalSiteVisit };
