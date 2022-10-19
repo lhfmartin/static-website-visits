@@ -1,17 +1,6 @@
 # AWS Lambda handler
 
-**(UNDER DEVELOPMENT)**
-
 This folder contains the Python code deployed on AWS Lambda that saves the visit record in to the MongoDB.
-
-It support two type of visit records:
-
-1. Page visits: Logging each page the user visited in the web site
-2. External url visits: Logging the links to external web sites that the user has clicked
-
-New functions planning to be added:
-1. Logging which buttons the user clicked on
-2. Logging the time user spent on each page
 
 ## Deploying the project
 

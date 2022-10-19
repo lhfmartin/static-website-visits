@@ -2,11 +2,6 @@
 
 This folder contains the JavaScript code that could be used on frontend web applications to send visit records to the API.
 
-It support two type of visit records:
-
-1. Page visits: Logging each page the user visited in the web site
-2. External url visits: Logging the links to external web sites that the user has clicked
-
 ## Using the js to record page visits
 
 1. Put the url into the `const`:
