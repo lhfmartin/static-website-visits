@@ -16,9 +16,9 @@ async function setDeviceInfo() {
   };
 }
 
-let setDeviceInfoPromise = setDeviceInfo()
+let setDeviceInfoPromise = setDeviceInfo();
 
-export async function recordPageVisit() {
+async function recordPageVisit() {
   await setDeviceInfoPromise;
   let record = {
     type: "PAGE_VISIT",
@@ -33,10 +33,10 @@ export async function recordPageVisit() {
   });
 }
 
-// Uncomment the following line if this script is imported in HTML files
-// recordPageVisit()
-
-export async function recordExternalSiteVisit(event, url) {
+async function recordExternalSiteVisit(event, url) {
+  if (!url) {
+    url = event.target.getAttribute("href");
+  }
   await setDeviceInfoPromise;
   let record = {
     type: "EXTERNAL_SITE_VISIT",
@@ -51,3 +51,10 @@ export async function recordExternalSiteVisit(event, url) {
     body: JSON.stringify(record),
   });
 }
+
+if (typeof module == "undefined") {
+  recordPageVisit();
+}
+
+// Comment the following line if this script is imported in HTML files
+export { recordPageVisit, recordExternalSiteVisit }

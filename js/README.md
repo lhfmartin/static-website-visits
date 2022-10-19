@@ -12,10 +12,10 @@ const API_URL = ""; //TODO
 
 ### Embedding the script in HTML files
 
-Uncommenting the line `// recordPageVisit()` in this part of the code
+Comment out the line with `export` in this part of the code
 ``` js
-// Uncomment the following line if this script is imported in HTML files
-// recordPageVisit()
+// Comment the following line if this script is imported in HTML files
+export { recordPageVisit, recordExternalSiteVisit }
 ```
 Then the script should be embedded in each HTML that the page visit should be recorded
 ``` html
@@ -60,7 +60,7 @@ function MyApp({ Component, pageProps }) {
 
 ## Using the js to record external url visits
 
+### Embedding the script in HTML files
 ``` html
-<a href={href} onClick={(e) => onClickHandler(e, href)} onAuxClick={(e) => onClickHandler(e, href)}>
+<a href="url" onClick="recordExternalSiteVisit(event)"></a>
 ```
-Make sure the `href` variable is defined and is a valid url
