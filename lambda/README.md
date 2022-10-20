@@ -75,3 +75,32 @@ Schema for external url visits
     "additionalProperties": False,
 }
 ```
+
+Schema for erroneous visits
+``` json
+"$jsonSchema": {
+    "bsonType": "object",
+    "required": ["_id", "datetime", "host", "path", "ip", "statusCode"],
+    "properties": {
+        "_id": {
+            "bsonType": "objectId",
+        },
+        "datetime": {
+            "bsonType": "date",
+        },
+        "host": {
+            "bsonType": "string",
+        },
+        "path": {
+            "bsonType": "string",
+        },
+        "ip": {
+            "bsonType": "string",
+        },
+        "statusCode": {
+            "bsonType": "int",
+        },
+    },
+    "additionalProperties": False,
+}
+```

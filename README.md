@@ -6,6 +6,7 @@ It support two type of visit records currently:
 
 1. Page visits: Logging each page the user visited in the web site
 2. External url visits: Logging the links to external web sites that the user has clicked
+3. Error pages: Logging the page visits where the status code != 200
 
 New functions planning to be added:
 1. Logging which buttons the user clicked on
