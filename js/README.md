@@ -46,7 +46,7 @@ No extra action required, page visits to each HTML file where the script is impo
 
 #### JavaScipt modules
 
-Page visits will be recorded only for the first visit to the page in a single page application. Read on to see how to record every time the window location changes for React and Next.js.
+Page visits will not be automatically recorded in a single page application. Refer to examples below to see how to record page visits for React and Next.js.
 
 - React
 
