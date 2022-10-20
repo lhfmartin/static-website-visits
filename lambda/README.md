@@ -22,8 +22,11 @@ Schema for page visits
 ``` json
 "$jsonSchema": {
     "bsonType": "object",
-    "required": ["datetime", "host", "path", "ip", "country"],
+    "required": ["_id", "datetime", "host", "path", "ip", "country"],
     "properties": {
+        "_id": {
+            "bsonType": "objectId",
+        },
         "datetime": {
             "bsonType": "date",
         },
@@ -40,6 +43,7 @@ Schema for page visits
             "bsonType": "string",
         },
     },
+    "additionalProperties": False,
 }
 ```
 
@@ -47,8 +51,11 @@ Schema for external url visits
 ``` json
 "$jsonSchema": {
     "bsonType": "object",
-    "required": ["datetime", "host", "path", "ip", "country", "externalUrl"],
+    "required": ["_id", "datetime", "host", "path", "ip", "externalUrl"],
     "properties": {
+        "_id": {
+            "bsonType": "objectId",
+        },
         "datetime": {
             "bsonType": "date",
         },
@@ -61,12 +68,10 @@ Schema for external url visits
         "ip": {
             "bsonType": "string",
         },
-        "country": {
-            "bsonType": "string",
-        },
         "externalUrl": {
             "bsonType": "string",
         },
     },
+    "additionalProperties": False,
 }
 ```

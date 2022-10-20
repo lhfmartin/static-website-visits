@@ -11,6 +11,7 @@ CONNECTION_STRING = f"mongodb+srv://{config['mongo']['username']}:{config['mongo
 REQUEST_TYPE_COLLECTION = {
     "PAGE_VISIT": "pages",
     "EXTERNAL_SITE_VISIT": "externalUrls",
+    "ERROR_PAGE": "errors",
 }
 
 mongo_client = MongoClient(CONNECTION_STRING)

@@ -43,8 +43,24 @@ async function recordExternalSiteVisit(event, url) {
     type: "EXTERNAL_SITE_VISIT",
     host: window.location.host,
     path: window.location.pathname,
-    ...deviceInfo,
+    ip: deviceInfo.ip,
     externalUrl: url,
+  };
+  fetch(API_URL, {
+    method: "post",
+    mode: "cors",
+    body: JSON.stringify(record),
+  });
+}
+
+async function recordErrorPage(statusCode) {
+  await setDeviceInfoPromise;
+  let record = {
+    type: "ERROR_PAGE",
+    host: window.location.host,
+    path: window.location.pathname,
+    ip: deviceInfo.ip,
+    statusCode: statusCode,
   };
   fetch(API_URL, {
     method: "post",
@@ -58,4 +74,4 @@ if (typeof module == "undefined") {
 }
 
 // Comment the following line if this script is imported in HTML files
-export { recordPageVisit, recordExternalSiteVisit };
+export { recordPageVisit, recordExternalSiteVisit, recordErrorPage };
