@@ -7,7 +7,7 @@ This folder contains the JavaScript code that could be used on frontend web appl
 ### Setting up
 
 1. Download `record-visit.js` and move it inside the project directory
-2. Put the url into the `const`:
+2. Put the API url into the `const`:
 ``` js
 const API_URL = ""; //TODO
 ```

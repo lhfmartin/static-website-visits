@@ -10,3 +10,11 @@ It support two type of visit records currently:
 New functions planning to be added:
 1. Logging which buttons the user clicked on
 2. Logging the time user spent on each page
+
+## Requirements
+
+1. A static website
+2. AWS account for creating Lambda function (1 million free requests / month)
+3. MongoDB Atlas account (512 MB storage for free)
+
+Since one record uses around 200 B storage space (depending on the lengths of the urls of the site), so around 2.5 million records can be saved into the DB.
