@@ -90,3 +90,30 @@ Replace the `${url}` with a valid URL
 ``` html
 <a href=${url} onClick="recordExternalSiteVisit(event)"></a>
 ```
+
+### Recording error pages
+
+#### HTML
+
+Replace the `${statusCode}` with the status code returned by the page
+```html
+<body onload="recordErrorPage(${statusCode})"></body>
+```
+
+#### JavaScipt modules
+
+- Next.js
+
+  ``` js
+  import { useEffect } from "react";
+  import { recordErrorPage } from "./record-visit";
+
+  function MyApp({ Component, pageProps }) {
+    useEffect(() => {
+      if (pageProps.statusCode && pageProps.statusCode !== 200) {
+        recordErrorPage(pageProps.statusCode);
+      }
+    }, [pageProps.statusCode]);
+    
+    // ...
+  ```
