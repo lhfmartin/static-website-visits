@@ -7,7 +7,7 @@ This folder contains the JavaScript code that could be used on frontend web appl
 ### Setting up
 
 1. Download `record-visit.js` and move it inside the project directory
-2. Put the API url into the `const`:
+2. Put the Lambda function url into the `API_URL`:
 ``` js
 const API_URL = ""; //TODO
 ```
@@ -25,7 +25,7 @@ const API_URL = ""; //TODO
         <script src="record-visit.js" async></script>  
         ```
 
-        Note: On every page where the script is embedded, visits to that page will be recorded automatically. To avoid this, delete / comment out the following code from the script:
+        Note: On every page where the script is embedded, visits to that page will be recorded automatically. To avoid this, delete / comment out the following code from the script (then, `recordPageVisit` has to be invoked manually on pages where visits should be recorded):
         ``` js
         if (typeof module == "undefined") {
           recordPageVisit();
@@ -42,7 +42,7 @@ const API_URL = ""; //TODO
 
 #### HTML
 
-No extra action required, page visits to each HTML file where the script is imported will be recorded automatically.
+No extra action required, page visits to each HTML file where the script is imported will be recorded automatically by default.
 
 #### JavaScipt modules
 
