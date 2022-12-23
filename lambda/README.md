@@ -22,7 +22,7 @@ Schema for page visits
 ``` json
 "$jsonSchema": {
     "bsonType": "object",
-    "required": ["_id", "datetime", "host", "path", "ip", "country"],
+    "required": ["_id", "datetime", "host", "path", "ip"],
     "properties": {
         "_id": {
             "bsonType": "objectId",

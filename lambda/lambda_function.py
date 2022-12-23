@@ -26,6 +26,7 @@ def lambda_handler(event, context):
 
     collection.insert_one({
         "datetime": datetime.utcnow(),
+        "ip": event["requestContext"]["http"]["sourceIp"],
         **req_body
     })
 
