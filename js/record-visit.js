@@ -5,6 +5,7 @@ async function recordPageVisit() {
     type: "PAGE_VISIT",
     host: window.location.host,
     path: window.location.pathname,
+    query: window.location.search,
   };
   fetch(API_URL, {
     method: "post",
@@ -21,6 +22,7 @@ async function recordExternalSiteVisit(event, url) {
     type: "EXTERNAL_SITE_VISIT",
     host: window.location.host,
     path: window.location.pathname,
+    query: window.location.search,
     externalUrl: url,
   };
   fetch(API_URL, {
@@ -35,6 +37,7 @@ async function recordErrorPage(statusCode) {
     type: "ERROR_PAGE",
     host: window.location.host,
     path: window.location.pathname,
+    query: window.location.search,
     statusCode: statusCode,
   };
   fetch(API_URL, {

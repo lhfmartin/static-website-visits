@@ -22,7 +22,7 @@ Schema for page visits
 ``` json
 "$jsonSchema": {
     "bsonType": "object",
-    "required": ["_id", "datetime", "host", "path", "ip"],
+    "required": ["_id", "datetime", "host", "path", "query", "ip"],
     "properties": {
         "_id": {
             "bsonType": "objectId",
@@ -34,6 +34,9 @@ Schema for page visits
             "bsonType": "string",
         },
         "path": {
+            "bsonType": "string",
+        },
+        "query": {
             "bsonType": "string",
         },
         "ip": {
@@ -51,7 +54,7 @@ Schema for external url visits
 ``` json
 "$jsonSchema": {
     "bsonType": "object",
-    "required": ["_id", "datetime", "host", "path", "ip", "externalUrl"],
+    "required": ["_id", "datetime", "host", "path", "query", "ip", "externalUrl"],
     "properties": {
         "_id": {
             "bsonType": "objectId",
@@ -63,6 +66,9 @@ Schema for external url visits
             "bsonType": "string",
         },
         "path": {
+            "bsonType": "string",
+        },
+        "query": {
             "bsonType": "string",
         },
         "ip": {
@@ -80,7 +86,7 @@ Schema for erroneous visits
 ``` json
 "$jsonSchema": {
     "bsonType": "object",
-    "required": ["_id", "datetime", "host", "path", "ip", "statusCode"],
+    "required": ["_id", "datetime", "host", "path", "query", "ip", "statusCode"],
     "properties": {
         "_id": {
             "bsonType": "objectId",
@@ -92,6 +98,9 @@ Schema for erroneous visits
             "bsonType": "string",
         },
         "path": {
+            "bsonType": "string",
+        },
+        "query": {
             "bsonType": "string",
         },
         "ip": {
